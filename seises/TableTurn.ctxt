@@ -1,0 +1,16 @@
+#BlueJ class context
+comment0.params=players
+comment0.target=TableTurn(java.lang.Object[])
+comment1.params=
+comment1.target=void\ clear()
+comment2.params=
+comment2.target=java.lang.Object\ next()
+comment3.params=player
+comment3.target=boolean\ isMyturn(java.lang.Object)
+comment4.params=world
+comment4.target=void\ addedToWorld(greenfoot.World)
+comment4.text=\r\n\ Create\ some\ new\ text\r\n
+comment5.params=s1\ s2
+comment5.target=void\ setText(java.lang.String,\ java.lang.String)
+comment5.text=\r\n\ Changes\ the\ text\ on\ the\ display\r\n
+numComments=6

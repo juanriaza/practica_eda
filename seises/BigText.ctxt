@@ -1,0 +1,14 @@
+#BlueJ class context
+comment0.params=
+comment0.target=void\ act()
+comment0.text=\r\n\ Decrease\ the\ time\ left.\ If\ 0,\ remove\ from\ the\ world.\r\n
+comment1.params=world
+comment1.target=void\ addedToWorld(greenfoot.World)
+comment1.text=\r\n\ Create\ some\ new\ text\r\n
+comment2.params=s
+comment2.target=void\ setText(java.lang.String)
+comment2.text=\r\n\ Changes\ the\ text\ on\ the\ display\r\n
+comment3.params=
+comment3.target=void\ clearBigText()
+comment3.text=\r\n\ Clears\ the\ big\ text\ already\ on\ the\ screen.\r\n
+numComments=4

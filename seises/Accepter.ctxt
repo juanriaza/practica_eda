@@ -1,0 +1,5 @@
+#BlueJ class context
+comment0.params=card
+comment0.target=boolean\ addCard(Card)
+comment0.text=\r\n\ Add\ a\ card\ if\ it's\ legal.\r\n\ @return\ true\ if\ the\ card\ has\ been\ added,\ false\ if\ it's\ been\ rejected.\r\n
+numComments=1
