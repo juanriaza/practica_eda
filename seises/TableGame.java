@@ -138,7 +138,8 @@ public class TableGame extends World
         /* Comprobamos que la baraja se ha repartido y que los jugadores no tienen cartas
          * o que las filas est‡n completas
          */
-        return (rowsCompleted() || playersEmpty()) && allCardsDealed;
+        //return (rowsCompleted() || playersEmpty()) && allCardsDealed;
+        return false;
     }
     
     private boolean rowsCompleted() {
@@ -175,10 +176,9 @@ public class TableGame extends World
         while(deck.getSize() != 0)
         {
             //Obtenemos la carta de la baraja y la eliminamos
-            Card carta = deck.drawCard();
+            Card carta = deck.showCard();
             //Dibujamos la carta en el tablero
-            addObject(carta,120,50);
-            carta.draw();
+            showACard();
             //obtenemos el jugador del turno correspondiente
             Player player = turno.next();
             //le damos la carta a dicho jugador
