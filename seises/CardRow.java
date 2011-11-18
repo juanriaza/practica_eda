@@ -55,6 +55,7 @@ public class CardRow  extends Actor implements Accepter
      */    
     private void add(Card card, int pos){
         //To-DO: Además de realizar lo que tiene que hacer, la carta ya no se va a poder arrastrar con el ratón
+        placeCard(card);
     }
     
     /**
