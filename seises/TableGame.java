@@ -135,8 +135,10 @@ public class TableGame extends World
      */
     private boolean isFinished(){
         //To-DO:
-        //return rowsCompleted() || playersEmpty();
-        return false;
+        /* Comprobamos que la baraja se ha repartido y que los jugadores no tienen cartas
+         * o que las filas est‡n completas
+         */
+        return (rowsCompleted() || playersEmpty()) && allCardsDealed;
     }
     
     private boolean rowsCompleted() {
@@ -144,8 +146,6 @@ public class TableGame extends World
         for (CardRow row: rows)
             if (!row.isCompleted()) 
                 completas = false;
-        System.out.println("rows");
-        System.out.println(completas);
         return completas;
     }
     
@@ -154,8 +154,6 @@ public class TableGame extends World
         for (Player player: players)
             if (player.hasCards())
                 vacios = false;
-        System.out.println("players");
-        System.out.println(vacios);
         return vacios;
     }
     
