@@ -140,25 +140,17 @@ public class TableGame extends World
     
     private boolean rowsCompleted() {
         boolean completas = true;
-        for (CardRow row: rows){
-            System.out.println(row);
-            if (!row.isCompleted()) {
+        for (CardRow row: rows)
+            if (!row.isCompleted()) 
                 completas = false;
-            }
-        }
-        System.out.println(completas);
         return completas;
     }
     
     private boolean playersEmpty(){
         boolean vacios = true;
-        for (Player player: players){
-            System.out.println(player);
-            if (player.hasCards()) {
+        for (Player player: players)
+            if (player.hasCards())
                 vacios = false;
-            }
-        }
-        System.out.println(vacios);
         return vacios;
     }
     
