@@ -149,7 +149,7 @@ public class Player  extends Actor implements Accepter
      */
     public int numberOfCards(){
         //To-DO:
-        return 0;
+        return cards.size();
     }
     
     /**
@@ -157,6 +157,7 @@ public class Player  extends Actor implements Accepter
      */
     public void remove(Card card){
         //To-DO: eliminar la carta correspondiente
+        cards.remove(card);
         placeAllCards();
     }
 
@@ -166,7 +167,7 @@ public class Player  extends Actor implements Accepter
      */
     public boolean canSelect(Card card){
         //To-DO:
-        return false;
+        return cards.peek().equals(card);
     }
     
     /**
@@ -191,6 +192,7 @@ public class Player  extends Actor implements Accepter
      */
     public void incrementFailures(Card card){
         //To-DO:
+        failures++;
     }
     
     
