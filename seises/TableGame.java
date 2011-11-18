@@ -135,7 +135,8 @@ public class TableGame extends World
      */
     private boolean isFinished(){
         //To-DO:
-        return rowsCompleted() || playersEmpty();
+        //return rowsCompleted() || playersEmpty();
+        return false;
     }
     
     private boolean rowsCompleted() {
@@ -143,6 +144,8 @@ public class TableGame extends World
         for (CardRow row: rows)
             if (!row.isCompleted()) 
                 completas = false;
+        System.out.println("rows");
+        System.out.println(completas);
         return completas;
     }
     
@@ -151,6 +154,8 @@ public class TableGame extends World
         for (Player player: players)
             if (player.hasCards())
                 vacios = false;
+        System.out.println("players");
+        System.out.println(vacios);
         return vacios;
     }
     
@@ -169,6 +174,20 @@ public class TableGame extends World
      */
     public void dealAllCards(){
         //To-DO:
+        while(deck.getSize() != 0)
+        {
+            //Obtenemos la carta de la baraja y la eliminamos
+            Card carta = deck.drawCard();
+            //Dibujamos la carta en el tablero
+            addObject(carta,120,50);
+            carta.draw();
+            //obtenemos el jugador del turno correspondiente
+            Player player = turno.next();
+            //le damos la carta a dicho jugador
+            player.addCard(carta);
+        }
+        //hemos repartido toda la baraja
+        allCardsDealed = true;
     }
     
     /**

@@ -85,6 +85,7 @@ public class Player  extends Actor implements Accepter
     public boolean addCard(Card card)
     {
         //To-DO:
+        add(card);
         return false;
     }
     
