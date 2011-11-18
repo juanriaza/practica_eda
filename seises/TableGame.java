@@ -93,6 +93,11 @@ public class TableGame extends World
      */
     private void addRows(){
         //To-DO: añadir filas, empezando la primera fila en la posición (400,200). El inicio de las siguientes filas se diferencian en 100 de unas a otras. 
+        rows = new CardRow[NUM_ROWS];
+        for (int i=0; i<rows.length; i++){
+            rows[i] = new CardRow();
+            addObject(rows[i], 400, 200 + i * 100);
+        }
     }
     
     /**
