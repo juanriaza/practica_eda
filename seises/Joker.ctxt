@@ -1,5 +1,0 @@
-#BlueJ class context
-comment0.params=
-comment0.target=void\ draw()
-comment0.text=\r\n\ Select\ the\ image\ of\ the\ card\ based\ on\ its\ suit,\ value\ and\ colour\r\n\ and\ draw\ it.\r\n
-numComments=1

@@ -1,3 +1,6 @@
 seises.zip
 .DS_Store
 /doc
+*.class
+*.ctxt
+*.greenfoot
