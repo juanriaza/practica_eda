@@ -138,8 +138,7 @@ public class TableGame extends World
         /* Comprobamos que la baraja se ha repartido y que los jugadores no tienen cartas
          * o que las filas est‡n completas
          */
-        //return (rowsCompleted() || playersEmpty()) && allCardsDealed;
-        return false;
+        return (rowsCompleted() || playersEmpty()) && allCardsDealed;
     }
     
     private boolean rowsCompleted() {
@@ -173,8 +172,7 @@ public class TableGame extends World
      */
     public void dealAllCards(){
         //To-DO:
-        while(deck.getSize() != 0)
-        {
+        while(deck.getSize() != 0){
             //Mostramos la carta que est‡ encima de la baraja y la colocamos encima de la mesa boca arriba
             showACard();
             Greenfoot.delay(7);
@@ -203,7 +201,13 @@ public class TableGame extends World
      */
     private String getTheWinner(){
         //TO-DO:
-        return "";
+        //El ganador es aquel jugador que no tiene cartas (o el que menos pasos ha realizado)
+        String ganador = "";
+        for (Player p: players)
+            if (!p.hasCards())
+                ganador = p.toString();
+        System.out.println(ganador);
+        return ganador;
     }
     
     /**

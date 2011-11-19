@@ -222,4 +222,8 @@ public class Player  extends Actor implements Accepter
     {
         // Add your action code here.
     }    
+    
+    public String toString() {
+        return name;
+    }
 }
