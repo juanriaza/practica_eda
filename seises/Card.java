@@ -217,7 +217,8 @@ public class Card extends CacheActor
      * @return una lista con las cartas que estan encima de la carta actual
      */
     private void getCardsOn(){
-        //To-DO:
+        if (accepter instanceof Player)
+            cards = accepter.getCardsOn();
     }
 
     /**
