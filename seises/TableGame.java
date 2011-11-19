@@ -79,7 +79,7 @@ public class TableGame extends World
     private void addPlayers(){
         players = new Player[NUM_PLAYERS];
         players[0] = new Player("player1", "images/ppl1.png", Position.SOUTH.getRotation());
-        players[1] = new Player("player5", "images/ppl2.png", Position.EAST.getRotation());
+        players[1] = new Player("player2", "images/ppl2.png", Position.EAST.getRotation());
         players[2] = new Player("player3", "images/ppl3.png", Position.NORTH.getRotation());
         players[3] = new Player("player4", "images/ppl4.png", Position.WEST.getRotation());
         addObject(players[0], 375, 650);
@@ -180,12 +180,11 @@ public class TableGame extends World
             Greenfoot.delay(7);
             //Obtenemos el jugador del turno correspondiente
             Player player = turno.next();
-            //Le damos la carta a dicho jugador
-            showCard.setAccepter(player);
             player.addCard(showCard);
         }
         //hemos repartido toda la baraja
         allCardsDealed = true;
+        turno.clear();
     }
     
     /**
