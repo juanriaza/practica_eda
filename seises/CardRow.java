@@ -38,7 +38,7 @@ public class CardRow  extends Actor implements Accepter
      */
     public boolean isCompleted(){
         //To-DO:
-        return false;
+        return cards.size() == 13;
     }
 
     /**
@@ -47,8 +47,11 @@ public class CardRow  extends Actor implements Accepter
      */
     public boolean addCard(Card card){
         //To-DO: verifica si se cumplen las restricciones y/o las reglas del juego que se comentan en la descipción de la prácica. En base a eso se decide aceptar o denegar
-        
-        add(card, 1);
+        //comprobamos si se cumplen las reglas
+        if (true) {
+            add(card, 1);
+            return true;
+        }
         return false;        
     }
     

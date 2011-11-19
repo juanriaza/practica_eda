@@ -85,11 +85,14 @@ public class Player  extends Actor implements Accepter
     public boolean addCard(Card card)
     {
         //To-DO:
-        //comprobamos reglas
-        if (true) {
+        //obtenemos el tablero
+        TableGame table = (TableGame) getWorld();
+        //comprobamos que sea su turno y la carta venga de la baraja (o que no lo tenga otro jugador)
+        if(table.isMyturn(this) && card.getAccepter().equals(this)){
             add(card);
             return true;
         }
+        add(card);
         return false;
     }
     

@@ -172,13 +172,16 @@ public class TableGame extends World
      */
     public void dealAllCards(){
         //To-DO:
-        while(deck.getSize() != 0){
+        //mientras la baraja no estŽ vac’a...
+        while(deck.getSize() > 0){
             //Mostramos la carta que est‡ encima de la baraja y la colocamos encima de la mesa boca arriba
             showACard();
+            //Espereamos entre carta y carta para visualizar el reparto
             Greenfoot.delay(7);
             //Obtenemos el jugador del turno correspondiente
             Player player = turno.next();
             //Le damos la carta a dicho jugador
+            showCard.setAccepter(player);
             player.addCard(showCard);
         }
         //hemos repartido toda la baraja
@@ -206,7 +209,6 @@ public class TableGame extends World
         for (Player p: players)
             if (!p.hasCards())
                 ganador = p.toString();
-        System.out.println(ganador);
         return ganador;
     }
     
