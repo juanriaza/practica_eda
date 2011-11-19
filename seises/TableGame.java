@@ -175,14 +175,13 @@ public class TableGame extends World
         //To-DO:
         while(deck.getSize() != 0)
         {
-            //Obtenemos la carta de la baraja y la eliminamos
-            Card carta = deck.showCard();
-            //Dibujamos la carta en el tablero
+            //Mostramos la carta que est‡ encima de la baraja y la colocamos encima de la mesa boca arriba
             showACard();
-            //obtenemos el jugador del turno correspondiente
+            Greenfoot.delay(7);
+            //Obtenemos el jugador del turno correspondiente
             Player player = turno.next();
-            //le damos la carta a dicho jugador
-            player.addCard(carta);
+            //Le damos la carta a dicho jugador
+            player.addCard(showCard);
         }
         //hemos repartido toda la baraja
         allCardsDealed = true;

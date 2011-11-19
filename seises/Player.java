@@ -75,7 +75,7 @@ public class Player  extends Actor implements Accepter
      */
     public boolean hasCards(){
         //To-DO:
-        return false;
+        return cards.size() != 0;
     }
     
     /**
@@ -85,7 +85,11 @@ public class Player  extends Actor implements Accepter
     public boolean addCard(Card card)
     {
         //To-DO:
-        add(card);
+        //comprobamos reglas
+        if (true) {
+            add(card);
+            return true;
+        }
         return false;
     }
     
@@ -167,7 +171,7 @@ public class Player  extends Actor implements Accepter
      */
     public boolean canSelect(Card card){
         //To-DO:
-        return cards.peek().equals(card);
+        return cards.peek() == card;
     }
     
     /**
