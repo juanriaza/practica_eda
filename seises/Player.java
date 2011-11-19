@@ -87,8 +87,10 @@ public class Player  extends Actor implements Accepter
         //To-DO:
         //obtenemos el tablero
         TableGame table = (TableGame) getWorld();
+        System.out.println(table.isMyturn(this));
         //comprobamos que sea su turno y la carta venga de la baraja (o que no lo tenga otro jugador)
-        if(table.isMyturn(this) && card.getAccepter().equals(this)){
+        if(table.isMyturn(this) && card.getAccepter().equals(this.name)){
+            System.out.println("the right way");
             add(card);
             return true;
         }
@@ -183,6 +185,7 @@ public class Player  extends Actor implements Accepter
      */
     public List<Card> getCardsOn(Card card){
         //To-DO:
+        /*
         if (!this.cards.contains(card)) return null;
         List cardsOn = new ArrayList();
         int index = this.cards.indexOf(card) + 1;
@@ -191,6 +194,8 @@ public class Player  extends Actor implements Accepter
             cardsOn.add(this.cards.get(i));
         }
         return cardsOn;
+        */
+       return null;
     }
     
     /**
@@ -229,7 +234,7 @@ public class Player  extends Actor implements Accepter
      */
     public void act() 
     {
-        // Add your action code here.
+        System.out.println("Actuando " + name);
     }    
     
     public String toString() {

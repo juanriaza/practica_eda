@@ -49,6 +49,7 @@ public class CardRow  extends Actor implements Accepter
         //To-DO: verifica si se cumplen las restricciones y/o las reglas del juego que se comentan en la descipción de la prácica. En base a eso se decide aceptar o denegar
         //comprobamos si se cumplen las reglas
         if (true) {
+            //calculamos posici—n
             add(card, 1);
             return true;
         }
@@ -60,6 +61,7 @@ public class CardRow  extends Actor implements Accepter
      */    
     private void add(Card card, int pos){
         //To-DO: Además de realizar lo que tiene que hacer, la carta ya no se va a poder arrastrar con el ratón
+        card.setDraggable(false);
         placeCard(card);
     }
     
