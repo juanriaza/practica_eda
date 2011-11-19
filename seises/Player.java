@@ -183,8 +183,14 @@ public class Player  extends Actor implements Accepter
      */
     public List<Card> getCardsOn(Card card){
         //To-DO:
-        return null;
-    
+        if (!this.cards.contains(card)) return null;
+        List cardsOn = new ArrayList();
+        int index = this.cards.indexOf(card) + 1;
+        int max = this.cards.size();
+        for (int i = index; i < max; i++) {
+            cardsOn.add(this.cards.get(i));
+        }
+        return cardsOn;
     }
     
     /**
