@@ -83,7 +83,6 @@ public class Player  extends Actor implements Accepter
      */
     public boolean addCard(Card card)
     {
-        //To-DO:
         //Obtenemos el tablero
         TableGame table = (TableGame)getWorld();
         //Comprobamos que viene de la baraja y que es el turno del jugador
@@ -99,6 +98,7 @@ public class Player  extends Actor implements Accepter
      */
     private void add(Card card){
         //To-DO: añadir carta a la cola
+        //a–adimos la carta a la cola
         cards.add(card);
         //---
         card.setAccepter(this);
@@ -155,7 +155,6 @@ public class Player  extends Actor implements Accepter
      * @return el número de cartas que tiene el jugador en la mano
      */
     public int numberOfCards(){
-        //To-DO:
         return cards.size();
     }
     
@@ -163,7 +162,6 @@ public class Player  extends Actor implements Accepter
      * Elimina la carta 'card'
      */
     public void remove(Card card){
-        //To-DO: eliminar la carta correspondiente
         cards.remove(card);
         placeAllCards();
     }

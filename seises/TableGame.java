@@ -92,7 +92,7 @@ public class TableGame extends World
      * Crea y añade 4 filas a la mesa
      */
     private void addRows(){
-        //To-DO: añadir filas, empezando la primera fila en la posición (400,200). El inicio de las siguientes filas se diferencian en 100 de unas a otras. 
+        //a–adimos filas, empezando la primera fila en la posición (400,200). Con una separaci—n de 100 entre filas
         rows = new CardRow[NUM_ROWS];
         for (int i=0; i<rows.length; i++){
             rows[i] = new CardRow();
@@ -134,10 +134,7 @@ public class TableGame extends World
      * @return True si el juego ha terminado y False, en caso contrario
      */
     private boolean isFinished(){
-        //To-DO:
-        /* Comprobamos que la baraja se ha repartido y que los jugadores no tienen cartas
-         * o que las filas est‡n completas
-         */
+        //Comprobamos que la baraja se ha repartido y que los jugadores no tienen cartas o que las filas est‡n completas
         return (rowsCompleted() || playersEmpty()) && allCardsDealed;
     }
     
@@ -151,8 +148,8 @@ public class TableGame extends World
     
     private boolean playersEmpty(){
         boolean vacios = true;
-        for (Player player: players)
-            if (player.hasCards())
+        for (Player p: players)
+            if (p.hasCards())
                 vacios = false;
         return vacios;
     }
@@ -185,7 +182,8 @@ public class TableGame extends World
             }
         //hemos repartido toda la baraja
         allCardsDealed = true;
-        //turno.clear();
+        //reiniciamos los turnos
+        turno.clear();
     }
     
     /**
