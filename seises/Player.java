@@ -91,7 +91,6 @@ public class Player  extends Actor implements Accepter
             add(card);
             return true;
         }
-        //add(card);
         return false;
     }
     

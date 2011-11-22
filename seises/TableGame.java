@@ -171,20 +171,21 @@ public class TableGame extends World
      * Reparte todas las cartas entre los jugadores, respetando el turno de cada uno de ellos
      */
     public void dealAllCards(){
-        //To-DO:
         //mientras la baraja no estŽ vac’a...
-        while(deck.getSize() > 0){
-            //Mostramos la carta que est‡ encima de la baraja y la colocamos encima de la mesa boca arriba
-            showACard();
-            //Espereamos entre carta y carta para visualizar el reparto
-            Greenfoot.delay(7);
-            //Obtenemos el jugador del turno correspondiente
-            Player player = turno.next();
-            player.addCard(showCard);
-        }
+        while(deck.getSize() > 0)
+            for (Player p: players) {
+                //Mostramos la carta que est‡ encima de la baraja y la colocamos encima de la mesa boca arriba
+                showACard();
+                //Espereamos entre carta y carta para visualizar el reparto
+                Greenfoot.delay(7);
+                //le damos la carta al jugador correspondiente
+                p.addCard(showCard);
+                //pasamos al siguiente turno
+                next();
+            }
         //hemos repartido toda la baraja
         allCardsDealed = true;
-        turno.clear();
+        //turno.clear();
     }
     
     /**
