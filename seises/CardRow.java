@@ -46,7 +46,7 @@ public class CardRow  extends Actor implements Accepter
      */
     public boolean addCard(Card card){
         //To-DO: verifica si se cumplen las restricciones y/o las reglas del juego que se comentan en la descipción de la prácica. En base a eso se decide aceptar o denegar
-        System.out.println("Se ha llamado al mŽtodo addCard de CardRow");
+        System.out.println("LLAMADO ADDCARD");
         //comprobamos si se cumplen las reglas
         //Si la fila no tiene palo asignado y la carta es un seis
         if (this.suit == null && card.getValue() == Card.Value.SIX) {
