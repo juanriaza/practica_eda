@@ -210,6 +210,8 @@ public class Card extends CacheActor
      */
     private void placeOnArow(){
         //To-DO: si se puede añadir suena el sonido Greenfoot.playSound("sounds/card.wav") y si no el jugador que tiene la carta realizará "paso"
+        System.out.println("LLAMADO: PLACE ON A ROW");
+        
     }
     
     /**
@@ -234,11 +236,21 @@ public class Card extends CacheActor
      * Intenta colocar la carta en las manos de un jugador o una fila, que hacen intersección con la carta
      */
     private void placeInAccepter(){
+        //---------
+       System.out.println("LLAMADO PLACEINACCEPTER");
+       //----------
        List<Accepter> accepters = getIntersectingObjects(Accepter.class);
        boolean added = false;
 
        //To-DO: intenta añadir la carta en uno de los accepter(Player o CardRow) que hacen intersección con la carta
-          
+       int pos = 0;
+       System.out.println("ACCEPTERS: " + accepters.toString());
+       while(!added && pos < accepters.size()) {
+           added = accepters.get(pos).addCard(this);
+           if (added) System.out.println("A–adido a " + accepters.get(pos));
+           pos++;
+        }
+       //----------
        if (added){
            nextTurn();
            Greenfoot.playSound("sounds/card.wav");                

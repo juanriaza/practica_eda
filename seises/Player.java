@@ -172,6 +172,8 @@ public class Player  extends Actor implements Accepter
      */
     public boolean canSelect(Card card){
         //To-DO:
+        System.out.print("LLAMADO CANSELECT ");
+        System.out.println(cards.peek() == card);
         return cards.peek() == card;
     }
     
