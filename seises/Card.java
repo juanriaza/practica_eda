@@ -209,10 +209,13 @@ public class Card extends CacheActor
      * Coloca automaticamente la carta en la fila correspondiente
      */
     private void placeOnArow(){
-        //To-DO: si se puede añadir suena el sonido Greenfoot.playSound("sounds/card.wav") y si no el jugador que tiene la carta realizará "paso"
+        //----------
         System.out.println("LLAMADO: PLACE ON A ROW");
+        //----------
         List<CardRow> rows = getWorld().getObjects(CardRow.class);
+        //----------
         System.out.println(rows);
+        //----------
         //intentamos a–adir la carta a alguna fila
         boolean added = false;
         Iterator<CardRow> it = rows.iterator();
@@ -244,6 +247,8 @@ public class Card extends CacheActor
      */
     private void leaveAllCardsAsBefore(){
         //To-DO:
+        for (Card c: cards)
+            c.reAdd();
     }
     
     /**
