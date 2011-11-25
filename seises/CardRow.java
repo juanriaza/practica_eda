@@ -37,7 +37,6 @@ public class CardRow  extends Actor implements Accepter
      * @return True si la fila está completa y False, en caso contrario
      */
     public boolean isCompleted(){
-        //To-DO:
         return cards.size() == 13;
     }
 
@@ -47,10 +46,16 @@ public class CardRow  extends Actor implements Accepter
      */
     public boolean addCard(Card card){
         //To-DO: verifica si se cumplen las restricciones y/o las reglas del juego que se comentan en la descipción de la prácica. En base a eso se decide aceptar o denegar
-        //comprobamos si se cumplen las reglas
         System.out.println("Se ha llamado al mŽtodo addCard de CardRow");
-        if (true) {
-            //calculamos posici—n
+        //comprobamos si se cumplen las reglas
+        //Si la fila no tiene palo asignado y la carta es un seis
+        if (this.suit == null && card.getValue() == Card.Value.SIX) {
+            this.suit = card.getSuit();
+            add(card, 1);
+            return true;
+        }
+        else if (this.suit == card.getSuit()){
+            //calculamos posici—n À?
             add(card, 1);
             return true;
         }
@@ -62,6 +67,10 @@ public class CardRow  extends Actor implements Accepter
      */    
     private void add(Card card, int pos){
         //To-DO: Además de realizar lo que tiene que hacer, la carta ya no se va a poder arrastrar con el ratón
+        
+        //-----
+        card.setAccepter(this);
+        //----
         card.setDraggable(false);
         placeCard(card);
     }
