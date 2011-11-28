@@ -182,18 +182,25 @@ public class Player  extends Actor implements Accepter
      * @return una lista con las cartas que estan encima de la carta 'card'
      */
     public List<Card> getCardsOn(Card card){
-        //To-DO:
-        /*
-        if (!this.cards.contains(card)) return null;
-        List cardsOn = new ArrayList();
-        int index = this.cards.indexOf(card) + 1;
-        int max = this.cards.size();
-        for (int i = index; i < max; i++) {
-            cardsOn.add(this.cards.get(i));
+        if (!cards.contains(card)) return null;
+ Iterator<Card> it = cards.iterator();
+        boolean found = false;
+        while(it.hasNext() && !found)
+        {
+            if(it.next()==card)
+                found = true;
         }
-        return cardsOn;
-        */
-       return null;
+        if(found && it.hasNext())
+        {
+            ArrayList<Card> cardsOn = new ArrayList<Card>();
+            while(it.hasNext()){
+                Card c = it.next();
+                cardsOn.add(c);
+            }
+            return cardsOn;
+        }
+        else
+            return null;
     }
     
     /**
@@ -201,6 +208,8 @@ public class Player  extends Actor implements Accepter
      */
     public void placeAllCards(){
         //To-DO:
+        for (Card c: cards)
+            c.reAdd();
     }
 
     /**
@@ -230,7 +239,7 @@ public class Player  extends Actor implements Accepter
      * Act - do whatever the Player wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
-    public void act() 
+    public void act()
     {
         //System.out.println("Actuando " + name);
     }    
