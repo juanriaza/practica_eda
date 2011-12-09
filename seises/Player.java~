@@ -30,7 +30,7 @@ public class Player extends Actor implements Accepter
     /** Show the first card completed */
     private boolean showFirstCompleted = true;
     /** Si el valor es True se pueden realizar movimientos automaticamente*/
-    private boolean auto = true;
+    private boolean auto = false;
     
 /**
 * Create a new player

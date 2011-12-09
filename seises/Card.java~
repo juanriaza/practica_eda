@@ -132,7 +132,7 @@ public class Card extends CacheActor
     }
     
     /**
-* Get the colour of the card 
+* Get the colour of the card
 * @return the colour of the card
 */
     public Colour getColour() {
@@ -140,7 +140,7 @@ public class Card extends CacheActor
     }
     
     /**
-* Get the value of the card 
+* Get the value of the card
 * @return the value of the card
 */
     public Value getValue() {
@@ -148,7 +148,7 @@ public class Card extends CacheActor
     }
     
     /**
-* Get the suit of the card (devuelve el palo)
+* Get the suit of the card
 * @return the suit of the card
 */
     public Suit getSuit() {
@@ -159,8 +159,7 @@ public class Card extends CacheActor
 * If we're allowed to drag the card around and manage the dragging.
 */
     public void act() {
-        //If we're not allowed to move the card about, don't do anything
-        if(!canDrag) return; 
+        if(!canDrag) return; //If we're not allowed to move the card about, don't do anything
                 
         MouseInfo mouse = Greenfoot.getMouseInfo();
         if(! (mouse!=null && mouse.getActor()==this)) return; //If the mouse isn't used on this card, don't do anything
@@ -200,8 +199,7 @@ public class Card extends CacheActor
     }
     
     /**
- Pasa al siguiente turno
- @return void
+* Pasa al siguiente turno
 */
     private void nextTurn(){
        ((TableGame)getWorld()).next();
@@ -209,7 +207,6 @@ public class Card extends CacheActor
     
     /**
 * Coloca automaticamente la carta en la fila correspondiente
-* @return void
 */
    private void placeOnArow(){
         
@@ -237,7 +234,7 @@ public class Card extends CacheActor
     }
     
  
-/** Calcula las cartas que estan encima de la carta actual
+/* Calcula las cartas que estan encima de la carta actual
 * @return una lista con las cartas que estan encima de la carta actual
 */
     private void getCardsOn(){
@@ -250,7 +247,6 @@ public class Card extends CacheActor
 
     /**
 * Dejar las cartas como antes, si se ha arrastrado una carta de la mitad
-* @return void
 */
     private void leaveAllCardsAsBefore(){
       if (accepter instanceof Player){
@@ -258,17 +254,22 @@ public class Card extends CacheActor
             pAux.placeAllCards();
             
        }
+        
+        //To-DO:
+       
+        /*for (Card c: cards)
+            c.reAdd();*/
     }
     
     /**
-* Intenta colocar la carta en las manos de un jugador o una fila, que hacen interseccion con la carta (controla inserciones a la hora de arrastrar las cartas)
-* @return void
+* Intenta colocar la carta en las manos de un jugador o una fila, que hacen intersecci�n con la carta
 */
     private void placeInAccepter(){
        List<Accepter> accepters = getIntersectingObjects(Accepter.class);
        boolean added = false;
-       
-        if (accepters.size() != 0)
+       //To-DO: intenta a�adir la carta en uno de los accepter(Player o CardRow) que hacen intersecci�n con la carta
+             
+       if (accepters.size() != 0)
        {
             Accepter accept = accepters.get(0);
             if (accept instanceof Player)
@@ -281,6 +282,7 @@ public class Card extends CacheActor
                 CardRow cRow = (CardRow)accept;
                 added = cRow.addCard(this);
             }
+        
         }
        if (added){
            Player pAux = (Player)this.getAccepter();
@@ -310,7 +312,6 @@ public class Card extends CacheActor
     
     /**
 * Set the initial co-ordinates of the card.
-* @return void
 */
     public void setInitial(int x, int y) {
         initialx = x;
@@ -319,7 +320,6 @@ public class Card extends CacheActor
     
     /**
 * Get the initial x value of the card.
-* @return void
 */
     public int getInitialx() {
         return initialx;
@@ -328,7 +328,6 @@ public class Card extends CacheActor
     
     /**
 * Get the initial y value of the card.
-* @return void
 */
     private int getInitialy() {
         return initialy;
@@ -336,7 +335,6 @@ public class Card extends CacheActor
     
     /**
 * Get the Player or CardRow is part of.
-* @return void
 */
     public Accepter getAccepter() {
         return accepter;
@@ -344,7 +342,6 @@ public class Card extends CacheActor
     
     /**
 * Set the Player or CardRow is part of.
-* @return void
 */
     public void setAccepter(Accepter accepter) {
         this.accepter = accepter;
@@ -352,7 +349,6 @@ public class Card extends CacheActor
     
     /**
 * Remove and add the object to the world
-* @return void
 */
     public void reAdd() {
         int x = getX();
@@ -362,18 +358,13 @@ public class Card extends CacheActor
         world.removeObject(this);
         world.addObject(this, x, y);
     }
-  /** intenta colocar la carta en una fila de la mesa, es un método publico para que pueda ser utilizado desde la clase Player y realizar asi el modo automatico de juego
-   @return void
-   */
     public void try2PutCard(){
         Greenfoot.delay(3);
         placeOnArow();
         }   
     
        
-    /** el método toString que sustituye al de la clase object y hace que devuelva el palo y el valor de la carta
-     * @return un String con el valor y el palo de la carta.
-     */
+    
     public String toString(){
         return this.value + ":" + this.suit;
     }

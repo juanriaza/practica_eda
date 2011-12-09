@@ -98,20 +98,19 @@ public class CardRow  extends Actor implements Accepter
         int dif;
         if (card.getValue() == Card.Value.SIX)
             x = x - 35;
-            
+            card.reAdd();
         else if (card.getValue().ordinal() >= Card.Value.SEVEN.ordinal()){
             dif = card.getValue().ordinal() - Card.Value.SEVEN.ordinal();
             x = x + 35 + dif*15;
-            
+            card.reAdd();
         }
         else {
             dif = Card.Value.SEVEN.ordinal() - card.getValue().ordinal();
             x = x - 75 - dif*15;
-            
+            card.reAdd();
         }
         card.setLocation(x,y);
         card.setRotation(0);
-        card.reAdd();
        
     }
       

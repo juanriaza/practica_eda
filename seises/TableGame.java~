@@ -143,7 +143,7 @@ public class TableGame extends World
 * Determina si el juego ha terminado o no
 * @return True si el juego ha terminado y False, en caso contrario
 */
-    private boolean isFinished(){
+    public boolean isFinished(){
         //Comprobamos que la baraja se ha repartido y que los jugadores no tienen cartas o que las filas est�n completas
       return ((areAllCardsDealed() && playersEmpty()) || rowsCompleted());
     }

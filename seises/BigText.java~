@@ -40,7 +40,7 @@ public class BigText extends Actor
     public void setText(String s)
     {
         getImage().clear();
-        getImage().setColor(java.awt.Color.BLUE);
+        getImage().setColor(java.awt.Color.YELLOW);
         getImage().setFont(font);
         getImage().drawString(s, 160, getImage().getHeight()/2);
     }
